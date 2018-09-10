@@ -15,12 +15,12 @@ request.onload = function () {
   
     var data = JSON.parse(this.response);
         for (var fact in data) {
-        var catFact = data.data[Math.floor(Math.random() * data.data.length)].fact;
+        const catFact = data.data[Math.floor(Math.random() * data.data.length)].fact;
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
 
         const img = document.createElement('img');
-        var id =  Math.floor(Math.random()*1000001);
+        const id =  Math.floor(Math.random()*1000001);
         img.src = `https://robohash.org/${id}200x200?set=set4`
         const p = document.createElement('p');
         p.textContent = `${catFact}...`; 
