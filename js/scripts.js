@@ -10,10 +10,10 @@ app.appendChild(h1);
 app.appendChild(container);
 
 var request = new XMLHttpRequest();
-request.open('GET', 'https://cors.io/?https://catfact.ninja/facts?limit=1000&max_length=300', true);
+request.open('GET', 'https://cors-anywhere.herokuapp.com/https://catfact.ninja/facts?limit=1000&max_length=300', true);
 request.onload = function () {
   
-    var data = JSON.parse(this.response);
+    const data = JSON.parse(this.response);
         for (var fact in data) {
         const catFact = data.data[Math.floor(Math.random() * data.data.length)].fact;
         const card = document.createElement('div');
